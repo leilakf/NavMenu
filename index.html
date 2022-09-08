@@ -25,6 +25,8 @@
             box-sizing: border-box;
         }
 
+
+
         body {
             font-family: 'Almarai', sans-serif;
             font-family: 'El Messiri', sans-serif;
@@ -102,8 +104,12 @@
             border-radius: 8px;
             cursor: pointer;
             padding: 10px;
+            overflow: hidden;
 
+        }
 
+        .nav-open {
+            width: 8rem;
         }
 
         .nav-list>ul>li>i {
@@ -127,6 +133,7 @@
 
         }
 
+
         nav ul li {
             justify-content: center;
             align-items: center;
@@ -135,7 +142,7 @@
             flex-wrap: nowrap;
             align-items: center;
             margin-bottom: 18px;
-            width: 90%;
+            /* width: 90%; */
             height: 38px;
             border-radius: 5px;
             padding: 4px 5px;
@@ -150,10 +157,9 @@
 
         nav ul li a {
             display: none;
-
-            transition: 1s;
-            /* display: none; */
-            /* visibility: hidden; */
+            /* display: contents; */
+            
+           
         }
     </style>
 </head>
@@ -205,26 +211,25 @@
     </div>
 
     <script>
+        
         document.getElementsByClassName('action_click')[0].addEventListener('click', mytoggle)
-
         function mytoggle() {
 
             debugger;
-            document.getElementsByClassName('nav-list')[0].style.width = '8rem';
+           
+            var element = document.getElementsByClassName("nav-list");
+            element[0].classList.toggle("nav-open");
 
+            
             var test = document.querySelectorAll('nav>ul>li>a');
             for (let index = 0; index < test.length; index++) {
-                const element = test[index].style.display = 'contents';
-
+               element = test[index].style.display='contents';
+                
             }
-            var element = document.getElementById("myDIV");
-            element.classList.toggle("mystyle");
-
-
+          
 
         }
-
-
+    
 
 
     </script>
