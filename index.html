@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=El+Messiri&display=swap"
+        rel="stylesheet">
+    <!-- CSS only -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> -->
+    <!-- JavaScript Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="fontello-0b428df2/css/fontello.css">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Almarai', sans-serif;
+            font-family: 'El Messiri', sans-serif;
+            direction: rtl;
+            height: 100vh;
+            background-image: linear-gradient(45deg, rgb(30, 14, 14), rgb(154, 156, 157), rgb(49, 30, 30));
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        div {
+            position: relative;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin: 80px auto;
+
+        }
+
+        #icon-toggle {
+            font-size: 30px;
+        }
+
+        .action_click {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            position: absolute;
+            top: 5px;
+            left: -9px;
+            width: 27px;
+            height: 27px;
+            /* border: 1px solid red;  */
+            border-radius: 50%;
+        }
+
+        li {
+            /* list-style-type: none */
+        }
+
+        .action_click i {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .action_click:hover i {
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        #icon-toggle {
+            background-color: rgb(255, 0, 162);
+            border-radius: 50%;
+            box-shadow: 0px 0px 8px 1px rgb(255, 0, 230);
+        }
+
+        #icon-toggle:hover {
+            transform: rotate(180deg);
+            background-color: #fff;
+            box-shadow: 0px 0px 8px 1px rgb(255, 255, 255);
+        }
+
+        .nav-list {
+            display: flex;
+            background-color: #191919;
+            box-shadow: -1px -1px 0 #636363, 1px 1px 3px 0 black;
+            justify-content: start;
+            align-items: center;
+            height: 500px;
+            width: 4rem;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 10px;
+
+
+        }
+
+        .nav-list>ul>li>i {
+            color: white;
+
+        }
+
+        .nav-list>ul>li>a {
+            padding: 0px 5px;
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .nav-list>ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+
+        }
+
+        nav ul li {
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            display: inline-flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            margin-bottom: 18px;
+            width: 90%;
+            height: 38px;
+            border-radius: 5px;
+            padding: 4px 5px;
+            transition: 0.5s;
+            /* background-color: #63636352; */
+        }
+
+        nav ul li:hover {
+            background-color: #63636352;
+            box-shadow: 0px 0px 8px 1px rgb(255, 255, 255);
+        }
+
+        nav ul li a {
+            display: none;
+
+            transition: 1s;
+            /* display: none; */
+            /* visibility: hidden; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="action_click">
+            <i class="demo-icon  icon-left-circle" id="icon-toggle"></i>
+        </span>
+        <nav class="nav-list">
+            <ul>
+                <li>
+                    <i class="demo-icon  icon-home" id="home"></i>
+                    <a href="ّ" class="test">خانه</a>
+                </li>
+                <li>
+                    <i class="demo-icon  icon-adult" id="user"></i>
+                    <a href="ّ">کاربر</a>
+                </li>
+                <li>
+                    <i class="demo-icon  icon-book" id="book"></i>
+                    <a href="ّ">کتاب</a>
+                </li>
+                <li>
+                    <i class="demo-icon  icon-mail-1" id="email"></i>
+                    <a href="ّ">ایمیل</a>
+                </li>
+                <li>
+                    <i class="demo-icon  icon-calc" id="calc"></i>
+                    <a href="ّ">تقویم</a>
+                </li>
+                <li>
+                    <i class="demo-icon  icon-cab" id="car"></i>
+                    <a href="ّ">ماشین</a>
+                </li>
+                <li>
+                    <i class="demo-icon  icon-box" id="product"></i>
+                    <a href="ّ">محصول</a>
+                </li>
+
+                <li>
+                    <i class="demo-icon  icon-bell-1" id="ثvent"></i>
+                    <a href="ّ">رویداد</a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+    <script>
+        document.getElementsByClassName('action_click')[0].addEventListener('click', mytoggle)
+
+        function mytoggle() {
+
+            debugger;
+            document.getElementsByClassName('nav-list')[0].style.width = '8rem';
+
+            var test = document.querySelectorAll('nav>ul>li>a');
+            for (let index = 0; index < test.length; index++) {
+                const element = test[index].style.display = 'contents';
+
+            }
+            var element = document.getElementById("myDIV");
+            element.classList.toggle("mystyle");
+
+
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
