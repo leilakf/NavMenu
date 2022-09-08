@@ -105,6 +105,7 @@
             cursor: pointer;
             padding: 10px;
             overflow: hidden;
+            transition: 0.6s;
 
         }
 
@@ -156,9 +157,8 @@
         }
 
         nav ul li a {
-            display: none;
-            /* display: contents; */
-            
+            transition: 0.5s;
+            opacity: 0;
            
         }
     </style>
@@ -173,7 +173,7 @@
             <ul>
                 <li>
                     <i class="demo-icon  icon-home" id="home"></i>
-                    <a href="ّ" class="test">خانه</a>
+                    <a href="ّ">خانه</a>
                 </li>
                 <li>
                     <i class="demo-icon  icon-adult" id="user"></i>
@@ -201,7 +201,7 @@
                 </li>
 
                 <li>
-                    <i class="demo-icon  icon-bell-1" id="ثvent"></i>
+                    <i class="demo-icon  icon-bell-1" id="vent"></i>
                     <a href="ّ">رویداد</a>
                 </li>
 
@@ -211,25 +211,30 @@
     </div>
 
     <script>
-        
-        document.getElementsByClassName('action_click')[0].addEventListener('click', mytoggle)
-        function mytoggle() {
+         var element = document.getElementsByClassName("nav-list");
+         let counter = 1
+         let myText = document.querySelectorAll('ul>li a')
+        document.getElementsByClassName('action_click')[0].addEventListener('click', ()=>{
+            
+            myText.forEach(index =>{
+                if(counter%2){
+                    element[0].classList.add('nav-open')
+                    index.style.opacity= '1'
+                }else{
+                    element[0].classList.remove('nav-open')
+                    index.style.opacity= '0'
+                }
+               
+            })
 
-            debugger;
-           
-            var element = document.getElementsByClassName("nav-list");
-            element[0].classList.toggle("nav-open");
+
+
+            counter++
 
             
-            var test = document.querySelectorAll('nav>ul>li>a');
-            for (let index = 0; index < test.length; index++) {
-               element = test[index].style.display='contents';
-                
-            }
-          
-
-        }
-    
+           
+        })
+       
 
 
     </script>
