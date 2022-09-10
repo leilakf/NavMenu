@@ -32,7 +32,7 @@
             font-family: 'El Messiri', sans-serif;
             direction: rtl;
             height: 100vh;
-            background-image: linear-gradient(45deg, rgb(30, 14, 14), rgb(154, 156, 157), rgb(49, 30, 30));
+            background-image: linear-gradient(45deg, rgb(24, 10, 10), rgb(105, 107, 108), rgb(36, 19, 19));
             display: flex;
             text-align: center;
             justify-content: center;
@@ -49,6 +49,9 @@
 
         #icon-toggle {
             font-size: 30px;
+             animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
         }
 
         .action_click {
@@ -56,17 +59,17 @@
             text-align: center;
             justify-content: center;
             position: absolute;
-            top: 5px;
+            top: 3px;
             left: -9px;
             width: 27px;
             height: 27px;
             /* border: 1px solid red;  */
             border-radius: 50%;
+            transition: 0.05s;
+           
         }
 
-        li {
-            /* list-style-type: none */
-        }
+
 
         .action_click i {
             width: 100%;
@@ -87,11 +90,11 @@
             box-shadow: 0px 0px 8px 1px rgb(255, 0, 230);
         }
 
-        #icon-toggle:hover {
+        /* #icon-toggle:hover {
             transform: rotate(180deg);
             background-color: #fff;
             box-shadow: 0px 0px 8px 1px rgb(255, 255, 255);
-        }
+        }  */
 
         .nav-list {
             display: flex;
@@ -100,7 +103,7 @@
             justify-content: start;
             align-items: center;
             height: 500px;
-            width: 4rem;
+            width: 4.4rem;
             border-radius: 8px;
             cursor: pointer;
             padding: 10px;
@@ -139,14 +142,13 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            display: inline-flex;
+            display: flex;
             flex-wrap: nowrap;
-            align-items: center;
             margin-bottom: 18px;
             /* width: 90%; */
-            height: 38px;
+            height: 35px;
             border-radius: 5px;
-            padding: 4px 5px;
+            padding: 4px 4px;
             transition: 0.5s;
             /* background-color: #63636352; */
         }
@@ -159,7 +161,28 @@
         nav ul li a {
             transition: 0.5s;
             opacity: 0;
+
+        }
+        @keyframes span1{
            
+            100%{transform:rotate(180deg);
+              background-color: #fff;
+            box-shadow: 0px 0px 8px 1px rgb(255, 255, 255);}
+
+            
+        }
+         @keyframes span2{
+           0%{transform:rotate(-180deg);
+            
+         }
+            100%{transform:rotate(0deg);
+            
+            
+            
+            }
+
+
+
         }
     </style>
 </head>
@@ -211,30 +234,42 @@
     </div>
 
     <script>
-         var element = document.getElementsByClassName("nav-list");
-         let counter = 1
-         let myText = document.querySelectorAll('ul>li a')
-        document.getElementsByClassName('action_click')[0].addEventListener('click', ()=>{
-            
-            myText.forEach(index =>{
-                if(counter%2){
+
+        var element = document.getElementsByClassName("nav-list");
+        let counter = 1
+        let myText = document.querySelectorAll('ul>li a')
+        document.getElementsByClassName('action_click')[0].addEventListener('click', () => {
+
+            myText.forEach(index => {
+             
+                if (counter % 2) {
                     element[0].classList.add('nav-open')
-                    index.style.opacity= '1'
-                }else{
+                    index.style.opacity = '1'
+                } else {
                     element[0].classList.remove('nav-open')
-                    index.style.opacity= '0'
+                    index.style.opacity = '0'
                 }
-               
+
             })
-
-
 
             counter++
 
-            
-           
         })
-       
+
+        let flag = 1
+        let y = document.getElementById('icon-toggle')
+        let x = document.getElementsByClassName('action_click')[0].addEventListener('click', _rotate)
+        function _rotate() {
+            if (flag % 2) {
+                // first click
+                y.style.animationName = "span1"
+            } else {
+                // second click
+                y.style.animationName = "span2"
+
+            }
+            flag++
+        }
 
 
     </script>
